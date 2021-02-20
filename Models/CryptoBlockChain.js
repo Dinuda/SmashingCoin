@@ -5,21 +5,34 @@ class CryptoBlockChain {
     constructor() {
         // array of blocks
         this.blockchain = [this.startGenesisBlock()];
+        this.difficulty = 4;
     }
-    // refers to the first ever block created in the blockchain
     startGenesisBlock() {
-        // initial block
         return new CryptoBlock(0, "01/01/2020", "Initial Block in the Chain", "0");
     }
-    // Getting the latest block in the blockchain assists in ensuring the hash of the current block points to the hash of the previous block therefore maintaining the chain’s integrity.
+
     obtainLatestBlock() {
         return this.blockchain[this.blockchain.length - 1];
     }
-    // method to add a new block to the chain
+    // Prooof of working mechanism
     addNewBlock(newBlock) {
         newBlock.precedingHash = this.obtainLatestBlock().hash;
-        newBlock.hash = newBlock.computeHash();
+        //newBlock.hash = newBlock.computeHash();
+        newBlock.proofOfWork(this.difficulty);
         this.blockchain.push(newBlock);
+    }
+
+    checkChainValidity() {
+        for (let i = 1; i < this.blockchain.length; i++) {
+            const currentBlock = this.blockchain[i];
+            const precedingBlock = this.blockchain[i - 1];
+
+            if (currentBlock.hash !== currentBlock.computeHash()) {
+                return false;
+            }
+            if (currentBlock.precedingHash !== precedingBlock.hash) return false;
+        }
+        return true;
     }
 }
 module.exports = CryptoBlockChain;

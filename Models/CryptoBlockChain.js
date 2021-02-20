@@ -21,7 +21,7 @@ class CryptoBlockChain {
         newBlock.proofOfWork(this.difficulty);
         this.blockchain.push(newBlock);
     }
-
+    // verify if the hash of every block had been tampered with
     checkChainValidity() {
         for (let i = 1; i < this.blockchain.length; i++) {
             const currentBlock = this.blockchain[i];

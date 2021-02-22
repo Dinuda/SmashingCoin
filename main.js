@@ -1,5 +1,15 @@
+// Packages
+const fs = require('fs')
+const chalk = require('chalk')
+
+// Files
 const CryptoBlockChain = require('./Models/CryptoBlockChain');
 const CryptoBlock = require('./Models/CryptoBlock');
+
+const loadAccountBalance = () => {
+
+}
+
 
 let smashingCoin = new CryptoBlockChain();
 smashingCoin.addNewBlock(new CryptoBlock(1, "2/20/2021", { sender: "Dinuda Yaggahavita", recipient: "Lehan Gajanayake", quantity: 200 }))

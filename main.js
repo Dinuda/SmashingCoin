@@ -7,7 +7,13 @@ const CryptoBlockChain = require('./Models/CryptoBlockChain');
 const CryptoBlock = require('./Models/CryptoBlock');
 
 const loadAccountBalance = () => {
-
+    try {
+        const dataBuffer = fs.readFileSync('Accounts/Dinuda.json')
+        const dataJSON = dataBuffer.toString()
+        return JSON.parse(dataJSON)
+    } catch (e) {
+        return []
+    }
 }
 
 

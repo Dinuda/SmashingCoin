@@ -2,6 +2,10 @@
 
 Simple Cryptocurrency Blockchain In Node.js
 
+## Install crypto
+
+    npm install crypto
+
 ## Install Dependancies
 
     npm install

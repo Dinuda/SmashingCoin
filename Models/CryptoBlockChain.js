@@ -14,7 +14,7 @@ class CryptoBlockChain {
         this.difficulty = 4;
     }
     startGenesisBlock() {
-        return new CryptoBlock(0, date.format(now, 'YYYY/MM/DD HH:mm:ss'), "Initial Block in the Chain", "0");
+        return new CryptoBlock(0, date.format(now, 'YYYY/MM/DD HH:mm:ss'), "Starting Block", "0");
     }
 
     obtainLatestBlock() {

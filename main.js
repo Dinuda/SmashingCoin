@@ -23,6 +23,6 @@ const loadAccountBalance = () => {
 
 
 let smashingCoin = new CryptoBlockChain();
-smashingCoin.addNewBlock(new CryptoBlock(1, date.format(now, 'YYYY/MM/DD HH:mm:ss'), { sender: "Dinuda Yaggahavita", recipient: "Lehan Gajanayake", quantity: 200 }))
+smashingCoin.addNewBlock(new CryptoBlock(1, date.format(now, 'YYYY/MM/DD HH:mm:ss'), { senderId: 1, recipientId: 2, quantity: 50000 }))
 
 console.log(JSON.stringify(smashingCoin, null, 4));

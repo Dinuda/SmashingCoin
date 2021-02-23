@@ -14,6 +14,10 @@ Simple Cryptocurrency Blockchain In Node.js
 
     npm install date-and-time --save
 
+## Install Random_number
+
+    npm i random-number
+
 ## Run the application
 
     node main.js
